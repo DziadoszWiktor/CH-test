@@ -1,7 +1,7 @@
-# CarHunters
-Aplikacja tworzona w ramach zajęć z Bogatych Aplikacji Internetowych
+# Vue 3 + Vite
 
-Aplikacja umożliwiająca dzielenie się z innymi zdjęciami szczególnych pojazdów, które zauważyliśmy na drogach całego świata. Po zalogowaniu, w aplikacji będzie można zrobić i dodać zdjęcia, zaznaczyć dokładną lokalizację na mapie oraz dodać opis spotkanego samochodu. Posty różnych użytkowników będą wyświetlały się na stronie głównej, każdy użytkownik będzie posiadał również swój profil na którym będą pokazywały się posty dodane wyłącznie przez niego. Każdy post będzie można komentować i dodawać do ulubionych a komentarze i ilość polubień będzie widoczna dla wszystkich.
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-Prototyp - [**Figma**](https://www.figma.com/file/GnWxLYfJkij7t52yqzdCZb/CarSpottingApp?node-id=214%3A234&t=K0LK65YsJeqbG4VI-1)
+## Recommended IDE Setup
 
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
