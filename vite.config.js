@@ -7,4 +7,8 @@ export default defineConfig({
   server: {
     port: 3000
   },
+  transpileDependencies: true,
+  publicPath: process.env.NODE_ENV === 'production'
+      ? '/gh-pages-vue-deployment/'
+      : '/'
 })
