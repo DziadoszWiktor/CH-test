@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   transpileDependencies: true,
+  base: './',
     publicPath: process.env.NODE_ENV === 'production'
         ? '/gh-pages-vue-deployment/'
         : '/'
