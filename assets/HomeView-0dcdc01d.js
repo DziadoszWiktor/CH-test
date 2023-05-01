@@ -1,0 +1,1 @@
+import{_ as o}from"./index-131d7119.js";import{o as e,b as t}from"./@vue-86055dd2.js";import"./vue-router-c5176ab4.js";const r={},c={class:"p-1"};function s(n,_){return e(),t("h1",c,"Wiktor Dziadosz")}const f=o(r,[["render",s]]);export{f as default};
