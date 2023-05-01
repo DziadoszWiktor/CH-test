@@ -20,7 +20,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             <div class="form-group">
                 <label for="cameraFileInput" class="btn btn-primary">Wybierz zdjęcie</label>
-                <input @change="openCamera" style="display:none" id="cameraFileInput" type="file" accept="image/*" capture="environment">
+                <input @change="openCamera" style="display:none" id="cameraFileInput" type="file" accept="image/*,capture=camera">
             </div>
             <div class="form-group">
                 <img id="pictureFromCamera" class="img-fluid"/>
