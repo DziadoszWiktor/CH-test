@@ -17,6 +17,9 @@
             <li class="nav-item">
               <router-link class="nav-link" :to="{ name: 'Posts' }">Posts</router-link>
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link" :to="{ name: 'AddPost' }">Add Post</router-link>
+            </li>
           </ul>
         </page-nav>
       </div>

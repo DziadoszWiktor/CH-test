@@ -24,5 +24,10 @@ export default createRouter({
       name: 'Posts',
       component: () => import('./views/PostsView.vue')
     }
+    ,{
+      path: '/add-post',
+      name: 'AddPost',
+      component: () => import('./views/AddPostView.vue')
+    }
   ]
 })
