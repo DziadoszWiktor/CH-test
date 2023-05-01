@@ -23,5 +23,5 @@
   
 <script setup>
     import { useFetch } from '../composable/useFetch'
-    const { data, fetchData } = useFetch('http://api.nbp.pl/api/exchangerates/tables/a/')
+    const { data, fetchData } = useFetch('https://api.nbp.pl/api/exchangerates/tables/a/')
 </script>
