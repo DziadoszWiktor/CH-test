@@ -25,7 +25,7 @@
     import { useFetch } from '../composable/useFetch'
     import { computed } from 'vue';
 
-    const { data } = useFetch('http://api.nbp.pl/api/exchangerates/tables/a/')
+    const { data } = useFetch('https://api.nbp.pl/api/exchangerates/tables/a/')
 
     const sortedRates = computed(() => {
         const rates = data.value[0]?.rates

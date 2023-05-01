@@ -19,5 +19,10 @@ export default createRouter({
       name: 'Kalkulator',
       component: () => import('./views/KalkulatorView.vue')
     }
+    ,{
+      path: '/posts',
+      name: 'Posts',
+      component: () => import('./views/PostsView.vue')
+    }
   ]
 })
