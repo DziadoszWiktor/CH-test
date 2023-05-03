@@ -28,6 +28,10 @@ export default createRouter({
       path: '/add-post',
       name: 'AddPost',
       component: () => import('./views/AddPostView.vue')
+    },{
+      path: '/search',
+      name: 'Search',
+      component: () => import('./views/SearchView.vue')
     }
   ]
 })
