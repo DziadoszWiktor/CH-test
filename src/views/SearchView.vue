@@ -1,138 +1,134 @@
 <template>
-    <div>
-      <div class="search-container">
-        <input :value="searchTerm" @input="updateSearchTerm" type="text" placeholder="Search for car make">
-        <button @click="search">Search</button>
-      </div>
-      <ul>
-        <li v-for="car in searchResults" :key="car.id">
-          <img :src="car.imageUrl" width="700" height="600">
-          <p>{{ car.make }}</p>
-          <p>{{ car.model }}</p>
-          <p>{{ car.engine }}</p>
-          <p>{{ car.color }}</p>
-        </li>
-      </ul>
+  <div class="bbbootstrap">
+    <div class="container">
+      <form>
+        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+        <input type="text" id="Form_Search" value="" placeholder="Search for posts..." role="searchbox" class="InputBox " autocomplete="off">
+        <input type="submit" id="Form_Go" class="Button" value="Search">
+      </form>
     </div>
-  </template>
+  </div>
   
-  <script>
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
-    import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
-    import { reactive } from "vue";
+</template>
   
-    const firebaseConfig = {
-        apiKey: "AIzaSyDpRlGDGuk1JUXi0VhvSpVcJwcCm1Q2ep8",
-        authDomain: "cars-cf954.firebaseapp.com",
-        projectId: "cars-cf954",
-        storageBucket: "cars-cf954.appspot.com",
-        messagingSenderId: "943137422806",
-        appId: "1:943137422806:web:60df9a425e9cf25a26b877"
-    };
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-  
-    export default {
-      setup() {
-        const searchTerm = reactive('');
-        const searchResults = reactive([]);
-  
-        const updateSearchTerm = (event) => {
-          searchTerm.value = event.target.value;
-        };
-  
-        const search = async () => {
-          searchResults.length = 0;
-          const carsRef = collection(db, 'cars');
-          const q = query(carsRef, where('make', '==', searchTerm.value));
-          const querySnapshot = await getDocs(q);
-          querySnapshot.forEach(async (doc) => {
-            const storage = getStorage();
-            const refImage = ref(storage, `cars/${doc.id}.jpg`);
-            const imageUrl = await getDownloadURL(refImage);
-            searchResults.push({
-              id: doc.id,
-              make: doc.data().make,
-              model: doc.data().model,
-              engine: doc.data().engine,
-              color: doc.data().color,
-              imageUrl: imageUrl
-            });
-          });
-        };
-  
-        return {
-          searchTerm,
-          searchResults,
-          updateSearchTerm,
-          search
-        };
-      }
-    };
-  </script>
-  
-  
-  <style>
-    .search-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-  
-    input[type="text"] {
-      width: 300px;
-      height: 30px;
-      margin-right: 10px;
-      padding: 5px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      outline: none;
-    }
-  
-    button {
-      padding: 5px 20px;
-      background-color: #4CAF50;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  
-    button:hover {
-      background-color: #3e8e41;
-    }
-  </style>
-  
+<script>
+</script>
 
 <style scoped>
-li {
-  display: inline-block;
-  margin: 10px;
-  background-color: white;
-  box-shadow: 0px 0px 5px #888;
-  border-radius: 5px;
-  text-align: center;
+body .bbbootstrap {
+    background-image: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1566917764/Add_a_heading.png) !important;
+    background-size: cover;
+    padding: 180px 0 30px 0;
 }
 
-img {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+.bbbootstrap {
+    padding: 40px;
+    margin-bottom: 22px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background-color: #8c2ef7;
+    -webkit-box-shadow: 0 15px 15px -15px rgba(0, 0, 0, 0.25) inset, 0 -15px 15px -15px rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0 15px 15px -15px rgba(0, 0, 0, 0.25) inset, 0 -15px 15px -15px rgba(0, 0, 0, 0.25) inset;
 }
 
-p {
-  margin: 5px;
-  font-size: 14px;
-  color: #555;
+.bbbootstrap form {
+    position: relative;
+    width: 540px;
+    margin: 22px auto 0;
 }
 
-h1 {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
+span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+
+.bbbootstrap form input[type="text"] {
+    padding: 15px 20px;
+    padding-right: 100px;
+    border-color: transparent;
+    border-radius: 4px;
+}
+input.InputBox{
+    font-family: "lucida grande", "Lucida Sans Unicode", tahoma, sans-serif;
+    color: #333;
+    font-size: 15px;
+    padding: 3px;
+    margin: 0;
+    width: 250px;
+    background: #fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+
+input[type=text] {
+    box-sizing: border-box;
+}
+
+.InputBox {
+    display: block;
+    width: 100% !important;
+    padding: 6px 12px;
+    font-size: 15px;
+    line-height: 22px;
+    border-radius: 4px;
+}
+
+.bbbootstrap form input[type="submit"] {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    float: right;
+    padding: 10px 25px;
+}
+
+body .Button, body .button {
+    background-color: #4c0d94;
+    background-image: none;
+}
+
+
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+.Button, .Button:hover, .Button:focus, .Button:active {
+    text-shadow: none;
+    border-color: transparent;
+}
+
+.Button {
+    display: inline-block;
+    padding: 6px 12px;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    border: transparent solid 1px;
+    border-radius: 3px;
+    -webkit-transition: -webkit-box-shadow 50ms;
+    transition: -webkit-box-shadow 50ms;
+    -o-transition: box-shadow 50ms;
+    transition: box-shadow 50ms;
+    transition: box-shadow 50ms, -webkit-box-shadow 50ms;
+    -webkit-font-smoothing: inherit;
+    color: #fff;
+    background-color: #8c2ef7;
+    background-repeat: repeat-x;
+    background-color: #8c2ef7;
+    background-image: -webkit-linear-gradient(#38a2f7, #2498f7);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#38a2f7), to(#2498f7));
+    background-image: -o-linear-gradient(#38a2f7, #2498f7);
+    background-image: linear-gradient(#38a2f7, #2498f7);
 }
 </style>
